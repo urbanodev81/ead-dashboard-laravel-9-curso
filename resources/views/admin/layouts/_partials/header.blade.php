@@ -28,15 +28,17 @@
 
     <!-- Dropdown Nav -->
     <nav :class="isOpen ? 'flex': 'hidden'" class="flex flex-col pt-4">
-        @for ()
-
-        @endfor
-        <a href="dash.html"
-            class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-            <i class="fas fa-tachometer-alt mr-3"></i>
-            Home
-        </a>
-        ir
+        @foreach (config('template.menus') as $menu )
+            <a href="dash.html"
+                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                <i class="fas fa-tachometer-alt mr-3"></i>
+                Home
+            </a>
+        @endforeach ()
         </a>
     </nav>
+    <a href="#"
+        class="absolute w-full upgrade-btn bottom-0 active-nav-link text-white flex items-center justify-center py-4">
+        <i class="fas fa-sign-out-alt mr-3"></i> Sair
+    </a>
 </header>
